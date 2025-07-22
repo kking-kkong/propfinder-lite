@@ -7,13 +7,14 @@ st.set_page_config(page_title="부동산 투자 추천 시스템", layout="wide"
 st.title("🏘️ 부동산 투자 추천 시스템")
 st.markdown("적합한 투자처를 데이터 기반으로 추천합니다.")
 
-# 절대 경로 확인용 디버그 출력
+# 디버그 출력 (필요 없으면 삭제해도 됨)
 st.write("현재 위치:", os.getcwd())
 st.write("폴더 내 파일들:", os.listdir())
 
 @st.cache_data
 def load_data():
-    path = "data/sample_properties.csv"
+    # 파일 경로 수정 (폴더 제거)
+    path = "sample_properties.csv"
     return pd.read_csv(path)
 
 try:
